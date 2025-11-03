@@ -128,6 +128,12 @@ ol {
         aspect-ratio: 1;
     }
 
+    .dates li button:disabled {
+        opacity: 0.5;
+        pointer-events: none;
+        user-select: none;
+    }
+
     .dates li button:hover {
         background-color: rgba(49, 6, 240, 0.1);
     }
