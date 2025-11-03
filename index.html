@@ -9,14 +9,17 @@
   <body>
     <main>
       <h1>Date picker task:</h1>
+
       <section class="container" id="first-variant">
         <h2>First variant:</h2>
         <div class="date-picker">
           <input type="datetime-local" />
         </div>
       </section>
+
       <section id="second-variant" class="date-picker-container container">
         <h2>Second variant:</h2>
+
         <input
           name="date-input"
           class="date-input"
@@ -25,6 +28,36 @@
         />
 
         <div class="date-picker">
+          <div class="header">
+            <button aria-label="Previous month">&lt;</button>
+
+            <div>
+              <select name="month-input" id="month-input" class="month-input">
+                <option>January</option>
+                <option>February</option>
+                <option>March</option>
+                <option>April</option>
+                <option>May</option>
+                <option>June</option>
+                <option>July</option>
+                <option>August</option>
+                <option>September</option>
+                <option>October</option>
+                <option>November</option>
+                <option>December</option>
+              </select>
+              <input
+                name="year-input"
+                id="year-input"
+                type="number"
+                class="year-input"
+                value="2024"
+              />
+            </div>
+
+            <button aria-label="Next month">&gt;</button>
+          </div>
+
           <ol class="days" role="list">
             <li>Sun</li>
             <li>Mon</li>
@@ -67,6 +100,11 @@
             <li><button>29</button></li>
             <li><button>30</button></li>
           </ol>
+
+          <div class="footer">
+            <button class="cancel">Cancel</button>
+            <button class="apply">Apply</button>
+          </div>
         </div>
       </section>
     </main>
