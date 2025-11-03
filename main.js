@@ -3,6 +3,8 @@ const dateInput = document.getElementById("date-input");
 const cancelBtn = document.querySelector(".cancel")
 const applyBtn = document.querySelector(".apply")
 const dates = document.querySelector(".dates")
+const nextBtn = document.getElementById("next-btn")
+const prevBtn = document.getElementById("prev-btn")
 
 let selectedDate = new Date()
 let year = selectedDate.getFullYear()
@@ -18,6 +20,19 @@ cancelBtn.addEventListener("click", () => {
 
 applyBtn.addEventListener("click", () => {
     datePicker.hidden = true
+})
+
+
+nextBtn.addEventListener("click", () => {
+    if (month === 11) year++;
+    month = (month + 1) % 12;
+    displayDates();
+})
+
+prevBtn.addEventListener("click", () => {
+    if (month === 0) year--;
+    month = (month + 1 + 12) % 12;
+    displayDates();
 })
 
 
