@@ -43,7 +43,10 @@ function displayDates() {
     const lastDayOfMonth = new Date(year, month + 1, 0)
     for (let i = 1; i <= lastDayOfMonth.getDate(); i++) {
         // i = 1 => cause of days being zero indexed
-        const button = createDatesButton(i)
+
+        const isToday = selectedDate.getDate() === i && selectedDate.getFullYear() === year && selectedDate.getMonth() === month;
+        console.log(isToday)
+        const button = createDatesButton(i, false, isToday)
         dates.appendChild(button)
     }
 
@@ -63,7 +66,7 @@ function createDatesButton(text, isDisabled = false, isToday = false) {
     const button = document.createElement("button");
     button.textContent = text;
     button.disabled = isDisabled;
-    button.classList.toggle(".today", isToday);
+    button.classList.toggle("today", isToday);
     li.appendChild(button);
     return li;
 }
