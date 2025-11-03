@@ -1,5 +1,7 @@
 const datePicker = document.getElementById("date-picker");
 const dateInput = document.getElementById("date-input");
+const yearInput = document.getElementById("year-input")
+const monthInput = document.getElementById("month-input")
 const cancelBtn = document.querySelector(".cancel")
 const applyBtn = document.querySelector(".apply")
 const dates = document.querySelector(".dates")
@@ -35,6 +37,23 @@ prevBtn.addEventListener("click", () => {
     displayDates();
 })
 
+monthInput.addEventListener("change", () => {
+    month = monthInput.selectedIndex;
+    displayDates();
+})
+
+yearInput.addEventListener("change", () => {
+    year = yearInput.value;
+    displayDates();
+})
+
+function updateYearMonth() {
+    // it's a select input and we can change the index of the option
+    monthInput.selectedIndex = month;
+
+    yearInput.value = year;
+}
+
 
 function handleDateClick(e) {
     const button = e.target
@@ -49,6 +68,9 @@ function handleDateClick(e) {
 
 
 function displayDates() {
+    // update year and month with each rerender caused by user input
+    updateYearMonth()
+
     // clear the dates
     dates.innerHTML = ""
 

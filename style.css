@@ -21,18 +21,22 @@ main {
     padding-inline: .5rem;
     width: 96%;
     margin-inline: auto;
+    text-align: center;
 }
 
 ol {
     list-style: none;
 }
 
-.container {
-    margin-top: 2rem;
-}
+
 
 #second-variant.date-picker-container {
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+
 
     .date-input {
         padding: 10px;
