@@ -21,6 +21,18 @@ applyBtn.addEventListener("click", () => {
 })
 
 
+function handleDateClick(e) {
+    const button = e.target
+
+    const selected = dates.querySelector(".selected")
+    selected && selected.classList.remove("selected")
+
+    button.classList.add("selected")
+
+    selectedDate = new Date(year, month, parseInt(button.textContent))
+}
+
+
 function displayDates() {
     // clear the dates
     dates.innerHTML = ""
@@ -45,8 +57,9 @@ function displayDates() {
         // i = 1 => cause of days being zero indexed
 
         const isToday = selectedDate.getDate() === i && selectedDate.getFullYear() === year && selectedDate.getMonth() === month;
-        console.log(isToday)
+
         const button = createDatesButton(i, false, isToday)
+        button.addEventListener("click", handleDateClick)
         dates.appendChild(button)
     }
 
