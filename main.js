@@ -100,9 +100,7 @@ function displayDates() {
     for (let i = 1; i <= lastDayOfMonth.getDate(); i++) {
         // i = 1 => cause of days being zero indexed
 
-        const isToday = selectedDate.getDate() === i && selectedDate.getFullYear() === year && selectedDate.getMonth() === month;
-
-        const button = createDatesButton(i, false, isToday)
+        const button = createDatesButton(i, false)
         button.addEventListener("click", handleDateClick)
         dates.appendChild(button)
     }
@@ -118,12 +116,17 @@ function displayDates() {
 
 }
 
-function createDatesButton(text, isDisabled = false, isToday = false) {
+function createDatesButton(text, isDisabled = false) {
+    const currentDate = new Date();
+
+    const isToday = currentDate.getDate() === text && currentDate.getFullYear() === year && currentDate.getMonth() === month;
+
     const li = document.createElement("li");
     const button = document.createElement("button");
     button.textContent = text;
     button.disabled = isDisabled;
     button.classList.toggle("today", isToday);
+
     li.appendChild(button);
     return li;
 }

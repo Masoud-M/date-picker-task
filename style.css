@@ -136,6 +136,10 @@ ol {
         opacity: 0.5;
         pointer-events: none;
         user-select: none;
+
+        /* if it's disabled overwrite the .today styles so we don't end up with duplicated today dates */
+        background-color: transparent !important;
+        color: var(--body-text-color) !important;
     }
 
     .dates li button:hover {
