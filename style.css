@@ -1,12 +1,107 @@
-body {
+:root {
+    --title-text-color: #333;
+    --body-text-color: rgb(107, 107, 107);
+    --accent-color: rgba(49, 6, 240, 0.877);
+    --bg-primary-color: #eeeeee;
+    --bg-accent-color: #FFF;
+}
+
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+    color: var(--title-text-color);
+    background-color: var(--bg-primary-color);
 }
 
 main {
-    max-width: 100%;
+    padding-block: 3rem;
     padding-inline: .5rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    width: 96%;
+    margin-inline: auto;
+}
+
+ol {
+    list-style: none;
+}
+
+.container {
+    margin-top: 2rem;
+}
+
+#second-variant.date-picker-container {
+    position: relative;
+
+    .date-input {
+        padding: 10px;
+        font-size: 1rem;
+        border-radius: 4px;
+        border: 1px solid #cecece;
+        background: var(--bg-accent-color);
+    }
+
+    .date-picker {
+        position: absolute;
+        top: 100%;
+        z-index: 10;
+        margin-top: 4px;
+        background: var(--bg-accent-color);
+        padding: 10px;
+        border-radius: 4px;
+    }
+
+    .date-picker li {
+        background: var(--bg-accent-color);
+        width: 100%;
+    }
+
+    .date-picker button {
+        width: 100%;
+        cursor: pointer;
+        border: none;
+        border-radius: 4px;
+        background: transparent;
+        font-size: .875rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        transition: 0.150s;
+    }
+
+    .days,
+    .dates {
+        background: var(--bg-accent-color);
+        display: grid;
+        grid-template-columns: repeat(7, 32px);
+        gap: 10px;
+        margin-block: 10px;
+    }
+
+    .days li {
+        font-size: .875rem;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+
+    .dates li button {
+        color: var(--body-text-color);
+        aspect-ratio: 1;
+
+    }
+
+    .dates li button:hover {
+        background-color: rgba(49, 6, 240, 0.1);
+    }
+
+    .dates li button.today {
+        background-color: rgba(49, 6, 240, 0.2);
+        color: var(--accent-color);
+    }
+
+    .dates li button.selected {
+        background-color: var(--accent-color);
+        color: var(--bg-accent-color);
+    }
+
 }

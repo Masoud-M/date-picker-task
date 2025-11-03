@@ -8,11 +8,65 @@
   </head>
   <body>
     <main>
-      <h1>Date picker task</h1>
-      <section>
+      <h1>Date picker task:</h1>
+      <section class="container" id="first-variant">
         <h2>First variant:</h2>
         <div class="date-picker">
           <input type="datetime-local" />
+        </div>
+      </section>
+      <section id="second-variant" class="date-picker-container container">
+        <h2>Second variant:</h2>
+        <input
+          name="date-input"
+          class="date-input"
+          type="text"
+          placeholder="Select date"
+        />
+
+        <div class="date-picker">
+          <ol class="days" role="list">
+            <li>Sun</li>
+            <li>Mon</li>
+            <li>Tue</li>
+            <li>Wen</li>
+            <li>Thu</li>
+            <li>Fri</li>
+            <li>Sat</li>
+          </ol>
+
+          <ol class="dates" role="list">
+            <li><button disabled>1</button></li>
+            <li><button disabled>2</button></li>
+            <li><button disabled>3</button></li>
+            <li><button disabled>4</button></li>
+            <li><button disabled>5</button></li>
+            <li><button>6</button></li>
+            <li><button>7</button></li>
+            <li><button>8</button></li>
+            <li><button>9</button></li>
+            <li><button>10</button></li>
+            <li><button>11</button></li>
+            <li><button>12</button></li>
+            <li><button class="today">13</button></li>
+            <li><button>14</button></li>
+            <li><button>15</button></li>
+            <li><button>16</button></li>
+            <li><button>17</button></li>
+            <li><button>18</button></li>
+            <li><button>19</button></li>
+            <li><button>20</button></li>
+            <li><button>21</button></li>
+            <li><button>22</button></li>
+            <li><button class="selected">23</button></li>
+            <li><button>24</button></li>
+            <li><button>25</button></li>
+            <li><button>26</button></li>
+            <li><button>27</button></li>
+            <li><button>28</button></li>
+            <li><button>29</button></li>
+            <li><button>30</button></li>
+          </ol>
         </div>
       </section>
     </main>
