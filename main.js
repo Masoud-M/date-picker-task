@@ -13,15 +13,22 @@ let year = selectedDate.getFullYear()
 let month = selectedDate.getMonth()
 
 dateInput.addEventListener("click", () => {
-    datePicker.hidden = false
+    datePicker.hidden = false;
 })
 
 cancelBtn.addEventListener("click", () => {
-    datePicker.hidden = true
+    datePicker.hidden = true;
 })
 
 applyBtn.addEventListener("click", () => {
-    datePicker.hidden = true
+    // the output is an object and needs to be formatted
+    dateInput.value = selectedDate.toLocaleDateString("en-US", {
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit",
+    });
+
+    datePicker.hidden = true;
 })
 
 
