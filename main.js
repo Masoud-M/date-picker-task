@@ -11,8 +11,8 @@ class DatePicker {
         this.yearInput = container.querySelector(".year-input");
         this.cancelBtn = container.querySelector(".cancel");
         this.applyBtn = container.querySelector(".apply");
-        this.nextBtn = container.querySelector("#next-btn");
-        this.prevBtn = container.querySelector("#prev-btn");
+        this.nextBtn = container.querySelector(".next-btn");
+        this.prevBtn = container.querySelector(".prev-btn");
         this.init();
     }
 
