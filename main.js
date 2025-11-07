@@ -82,6 +82,13 @@ class DatePicker {
                 this.datePicker.hidden = true;
             }
         });
+
+        document.addEventListener("click", (e) => {
+            if (!this.datePicker.hidden && !this.container.contains(e.target)) {
+                this.datePicker.hidden = true;
+            }
+        });
+
     }
 
 
