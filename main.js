@@ -76,6 +76,12 @@ class DatePicker {
             this.year = this.yearInput.value;
             this.displayDates();
         });
+
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape" && !this.datePicker.hidden) {
+                this.datePicker.hidden = true;
+            }
+        });
     }
 
 
